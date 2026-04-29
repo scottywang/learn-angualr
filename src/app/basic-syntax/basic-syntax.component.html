@@ -1,0 +1,51 @@
+<div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+      階段 1：基礎語法組件
+    </div>
+    <div class="card-body">
+      
+      <section class="mb-4">
+        <label class="form-label fw-bold">1. 取得欄位值 (雙向綁定)</label>
+        <input type="text" class="form-control" [(ngModel)]="inputValues" placeholder="輸入看看...">
+        <div class="mt-2 text-muted">你輸入了：{{ inputValues }}</div>
+      </section>
+  
+      <section class="mb-4">
+        <label class="form-label d-block fw-bold">2. 條件顯示 (*ngIf)</label>
+        <button class="btn btn-sm btn-outline-primary mb-2" (click)="toggle()">
+          {{ isVisible ? '隱藏列表' : '顯示列表' }}
+        </button>
+        
+        <div *ngIf="isVisible" class="alert alert-warning">
+          這是一段可以被隱藏的文字
+        </div>
+      </section>
+  
+      <section>
+        <label class="form-label fw-bold">3. 迴圈渲染 (*ngFor)</label>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between" *ngFor="let item of skills">
+            <span>{{ item.name }}</span>
+            <span class="badge bg-secondary">{{ item.level }}</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+        <h6 class="fw-bold">4. TS 流程處理練習 (Input -> Function -> Result)</h6>
+        
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="輸入文字轉大寫..." [(ngModel)]="rawInput">
+          
+          <button class="btn btn-primary" type="button" (click)="set()">執行處理</button>
+        </div>
+      
+        <div class="mt-2">
+          <span class="badge bg-success p-2" *ngIf="processedResult">
+            處理結果：{{ processedResult }}
+          </span>
+        </div>
+      </section>
+  
+    </div>
+  </div>

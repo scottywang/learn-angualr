@@ -1,0 +1,59 @@
+// 1. 變數 (Variables) - 方便統一管理顏色
+$primary-color: #673ab7;
+$success-color: #2e7d32;
+$transition-speed: 0.3s;
+
+// 2. 混合 (Mixin) - 像 Function 一樣重複使用樣式
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.style-container {
+  padding: 20px;
+  border: 2px solid #eee;
+
+  // 3. 巢狀結構 (Nesting) - 結構清晰
+  .custom-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform $transition-speed;
+
+    // 4. 偽類 (Pseudo-classes) 使用 & 符號
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: $primary-color;
+      font-size: 1.5rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background-color: $success-color;
+      color: white;
+      @include flex-center; // 使用 Mixin
+    }
+  }
+}
+@keyframes slideIn {
+    from { opacity: 0; margin-left: -50px; }
+    to { opacity: 1; margin-left: 0px; }
+  }
+  
+  .animate-box {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(45deg, #673ab7, #ff4081); // CSS3 漸層
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    animation: slideIn 1s ease-out; // 套用動畫
+  }
