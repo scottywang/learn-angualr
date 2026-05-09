@@ -1,0 +1,72 @@
+<div class="card mt-4 border-warning">
+    <div class="card-header bg-warning text-dark fw-bold">階段 4：JS / jQuery vs Angular</div>
+    <div class="card-body">
+      
+      <div class="row text-center">
+        <!-- 傳統 DOM 區塊 (保留原本) -->
+        <div class="col-md-6 border-end">
+          <h6>傳統 DOM 操控</h6>
+          <div id="jqueryBox" class="p-3 mb-2 bg-light border">我是原始方塊</div>
+          <button id="vanillaBtn" class="btn btn-sm btn-secondary me-2">原生 JS Alert</button>
+          <button class="btn btn-sm btn-outline-dark" (click)="useJquery()">jQuery 變色</button>
+        </div>
+  
+        <!-- Angular 基礎區塊 (保留原本) -->
+        <div class="col-md-6">
+          <h6>Angular 基礎綁定</h6>
+          <div class="p-3 mb-2 border" [class.bg-danger]="isAngularRed" [class.text-white]="isAngularRed">
+            {{ isAngularRed ? '我是 Angular 紅' : '我是原始狀態' }}
+          </div>
+          <button class="btn btn-sm btn-primary" (click)="useAngular()">切換紅/白</button>
+        </div>
+      </div>
+  
+      <hr class="my-4">
+  
+      <!-- 新增：Angular 進階語法練習區 -->
+      <h6 class="text-primary fw-bold mb-3">Angular 進階綁定練習 (ngModel, ngClass, ngStyle)</h6>
+      <div class="row">
+        
+        <!-- 1. [(ngModel)] 案例：雙向綁定 -->
+        <div class="col-md-4 mb-3">
+          <label class="form-label small">[(ngModel)] 輸入連動：</label>
+          <input type="text" class="form-control mb-2" [(ngModel)]="userName" placeholder="輸入名字...">
+          <div class="p-2 bg-light border">你好，{{ userName || '陌生人' }}！</div>
+        </div>
+  
+        <!-- 2. [ngClass] 案例：多重類別判斷 -->
+        <div class="col-md-4 mb-3">
+          <label class="form-label small">[ngClass] 動態樣式包：</label>
+          <div class="p-2 mb-2 border" [ngClass]="{
+              'bg-success': status === 'active',
+              'bg-secondary': status === 'disabled',
+              'text-white': status === 'active',
+              'rounded-pill': isPillMode
+            }">
+            目前狀態：{{ status }}
+          </div>
+          <button class="btn btn-xs btn-outline-success me-1" (click)="status = 'active'">啟動</button>
+          <button class="btn btn-xs btn-outline-secondary me-1" (click)="status = 'disabled'">停用</button>
+          <button class="btn btn-xs btn-info" (click)="isPillMode = !isPillMode">切換圓角</button>
+        </div>
+  
+        <!-- 3. [ngStyle] 案例：精確數值控制 -->
+        <div class="col-md-4 mb-3">
+          <label class="form-label small">[ngStyle] 數值控制：</label>
+          <input type="range" class="form-range" min="10" max="50" [(ngModel)]="fontSize">
+          <div class="p-2 border" [ngStyle]="{
+              'font-size.px': fontSize,
+              'color': fontSize > 30 ? 'red' : 'black',
+              'transition': '0.2s'
+            }">
+            字體大小：{{ fontSize }}px
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="alert alert-info mt-4 shadow-sm small">
+        <strong>筆記：</strong> [ngClass] 適合管理「多個 CSS Class」，[ngStyle] 適合處理「動態計算的數值」(如高度、寬度、顏色深淺)。
+      </div>
+    </div>
+  </div>

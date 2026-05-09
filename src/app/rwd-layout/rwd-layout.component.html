@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <h3 class="text-center mb-4">階段 3：RWD 響應式佈局</h3>
+  
+    <!-- 使用 row 建立列 -->
+    <div class="row g-4">
+      
+      <!-- 產品卡片 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="p-3 border bg-light rounded shadow-sm h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="badge bg-danger">熱銷</span>
+            <i class="bi bi-heart"></i>
+          </div>
+          <h5>電腦版顯示 3 個</h5>
+          <p>在平板(md)會變 2 個，手機(12)會變 1 個佔滿。</p>
+        </div>
+      </div>
+  
+      <!-- 產品卡片 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="p-3 border bg-white rounded shadow-sm h-100">
+          <h5>彈性佈局練習</h5>
+          <p>Bootstrap 的 g-4 代表 Gutters (間距)。</p>
+        </div>
+      </div>
+  
+      <!-- 產品卡片 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="p-3 border bg-white rounded shadow-sm h-100">
+          <h5>自動調整</h5>
+          <p>嘗試縮小瀏覽器視窗，觀察卡片的排列變化。</p>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Flexbox 練習區 -->
+     <!--g- 是增加row內部的padding 所以你在col更裡面設定 顏色有間隔-->
+    <div class="mt-5 p-4 bg-dark text-white rounded">
+      <h5>Flexbox 水平垂直置中練習</h5>
+      <div class="row g-1 my-custom-flex">
+          <div class="col-12 col-md-8 col-lg-4 p-2">
+            <div class="bg-primary">項目 A</div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-4 p-2 ">
+            <div class="bg-success">項目 B</div>
+        </div>
+          <div class="col-12 col-md-8 col-lg-4 p-2  text-dark">
+            <div class="bg-warning">項目 C</div>
+          </div>
+      </div>
+    </div>
+
+    <!--g- 是增加row內部的padding 所以你在col裡面設定 顏色 會看不出來他們有間隔-->
+    <div class='row g-3'>
+        <div class='col-12 col-md-6 col-lg-4'>
+            <div class="bg-danger">1</div>
+        </div>
+        <div class='col-12 col-md-6 col-lg-4 bg-primary'>2</div>
+        <div class='col-12 col-md-6 col-lg-4 bg-dark'>3</div>
+    </div>
+  </div>

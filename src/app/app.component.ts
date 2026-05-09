@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BasicSyntaxComponent } from './basic-syntax/basic-syntax.component';
 import { StylePracticeComponent } from './style-practice/style-practice.component';
+import { RwdLayoutComponent } from './rwd-layout/rwd-layout.component';
+import { JsJqueryComponent } from './js-jquery/js-jquery.component';
 @Component({
   selector: 'app-root',
-  imports: [ BasicSyntaxComponent,StylePracticeComponent],
+  imports: [ BasicSyntaxComponent,StylePracticeComponent,RwdLayoutComponent,JsJqueryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

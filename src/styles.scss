@@ -1,1 +1,22 @@
+// 1. 先定義斷點 (在哪個寬度變形)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 800px,
+  lg: 1000px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// 2. 必須同時定義容器最大寬度 (不然網格系統會算錯)
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// 3. (關鍵) 確保路徑正確，並引入全域
+@use "bootstrap/scss/bootstrap";
 /* You can add global styles to this file, and also import other style files */
